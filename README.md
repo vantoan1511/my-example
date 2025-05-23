@@ -1,57 +1,52 @@
-# my-example
+# My Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Description
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+This is a basic Quarkus project.
 
-## Running the application in dev mode
+## Getting Started
 
-You can run your application in dev mode that enables live coding using:
+### Prerequisites
 
-```shell script
-./gradlew quarkusDev
-```
+- JDK 21
+- Gradle
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+### Building and Running
 
-## Packaging and running the application
+To build the project, run:
 
-The application can be packaged using:
-
-```shell script
+```shell
 ./gradlew build
 ```
 
-It produces the `quarkus-run.jar` file in the `build/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `build/quarkus-app/lib/` directory.
+This will compile the project and package it into a JAR file.
 
-The application is now runnable using `java -jar build/quarkus-app/quarkus-run.jar`.
+### Running the Application in devmode
 
-If you want to build an _über-jar_, execute the following command:
+To run the application in devmod, use the following command:
 
-```shell script
-./gradlew build -Dquarkus.package.jar.type=uber-jar
+```shell
+./gradlew quarkusDev
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar build/*-runner.jar`.
+## Building and Running with Docker
 
-## Creating a native executable
+### Building the JVM Image
 
-You can create a native executable using:
+To build the JVM image, run:
 
-```shell script
-./gradlew build -Dquarkus.native.enabled=true
+```shell
+docker build . -t quarkus/my-example .
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+### Running the image
 
-```shell script
-./gradlew build -Dquarkus.native.enabled=true -Dquarkus.native.container-build=true
+
+To run the image, run:
+
+```shell
+docker run -d -p 8080:8080 --name my-example quarkus/my-example
 ```
-
-You can then execute your native executable with: `./build/my-example-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/gradle-tooling>.
 
 ## Related Guides
 
