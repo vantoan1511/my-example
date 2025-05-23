@@ -36,7 +36,7 @@ To run the application in devmod, use the following command:
 To build the JVM image, run:
 
 ```shell
-docker build . -t quarkus/my-example .
+docker build . -t quarkus/my-example
 ```
 
 ### Running the image
